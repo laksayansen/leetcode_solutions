@@ -1,10 +1,21 @@
-# Last updated: 9/8/2026, 6:02:17 PM
-1class Solution:
-2    def removeDuplicates(self, nums: List[int]) -> int:
-3        k = 1
-4        for i in range(1, len(nums)):
-5            if nums[i] != nums[k - 1]:
-6                nums[k] = nums[i]
-7                k += 1
-8        return k
-9
+# Last updated: 9/8/2026, 6:03:01 PM
+1# Definition for singly-linked list.
+2# class ListNode:
+3#     def __init__(self, val=0, next=None):
+4#         self.val = val
+5#         self.next = next
+6class Solution:
+7    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+8        lst = ListNode()
+9        node = lst
+10        while list1 and list2:
+11            if list1.val <= list2.val:
+12                node.next = list1
+13                list1 = list1.next
+14            else:
+15                node.next = list2
+16                list2 = list2.next
+17            node = node.next
+18        node.next = list1 if list1 else list2
+19        return lst.next
+20       
