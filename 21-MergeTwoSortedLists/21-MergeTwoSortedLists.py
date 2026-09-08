@@ -1,4 +1,4 @@
-# Last updated: 9/8/2026, 5:34:19 PM
+# Last updated: 9/8/2026, 6:02:04 PM
 1class Solution:
 2    def removeDuplicates(self, nums: List[int]) -> int:
 3        k = 1
